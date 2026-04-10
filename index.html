@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valence Dergisi | Hoş Geldiniz</title>
+    <meta name="description" content="Valence Dergisi - Kültür, sanat ve estetiğin premium noktası.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+    <!-- ========== MINIMAL LOADER ========== -->
+    <div class="loader" id="loader">
+        <div class="loader-logo-ring">
+            <svg viewBox="0 0 100 100" class="ring-svg">
+                <circle cx="50" cy="50" r="45" class="ring-track"/>
+                <circle cx="50" cy="50" r="45" class="ring-fill"/>
+            </svg>
+            <img src="Valence%20Logo.svg" alt="" class="loader-logo-img">
+        </div>
+    </div>
+
+    <!-- ========== FLOATING PARTICLES ========== -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ========== HERO ========== -->
+    <main class="hero" id="hero">
+
+        <!-- Background Video -->
+        <div class="video-bg">
+            <video autoplay muted loop playsinline id="bgVideo">
+                <source src="main_video.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <!-- Ambient Living Glows -->
+            <div class="ambient-glow glow-1"></div>
+            <div class="ambient-glow glow-2"></div>
+        </div>
+
+        <!-- Corner decorations -->
+        <div class="corner-decor corner-tl"></div>
+        <div class="corner-decor corner-tr"></div>
+        <div class="corner-decor corner-bl"></div>
+        <div class="corner-decor corner-br"></div>
+
+        <div class="hero-content">
+            <!-- Decorative top line -->
+            <div class="deco-line reveal"></div>
+
+            <div class="logo-wrapper reveal delay-1">
+                <img src="Valence%20Logo.svg" alt="Valence Dergisi Logo" class="brand-logo" id="brandLogo">
+                <div class="logo-glow"></div>
+            </div>
+            
+            <div class="title-group">
+                <h1 class="reveal delay-2">VALENCE</h1>
+                <div class="magazine-label reveal delay-3">
+                    <span class="label-line"></span>
+                    <span class="label-text">MAGAZINE</span>
+                    <span class="label-line"></span>
+                </div>
+            </div>
+
+            <!-- Decorative bottom line -->
+            <div class="deco-line reveal delay-4"></div>
+            
+            <div class="cta-wrapper reveal delay-5">
+                <a href="#" class="btn btn-primary" id="ctaBtn">
+                    <span class="btn-text">Dergiyi Keşfet</span>
+                    <span class="btn-hover-effect"></span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator reveal delay-7" id="scrollIndicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PARTNERSHIP / FOOTER ========== -->
+    <footer class="about-section" id="aboutSection">
+        <div class="section-divider">
+            <div class="divider-line"></div>
+            <div class="divider-diamond"></div>
+            <div class="divider-line"></div>
+        </div>
+        <div class="partnership-container">
+            <h2 class="fade-up">OFFICIAL PARTNERSHIP</h2>
+            <div class="partner-logos fade-up delay-1">
+                <div class="partner-box">
+                    <img src="CALISKAN logo.svg" alt="CALISKAN Studio Logo" class="partner-logo">
+                </div>
+                <div class="partner-box cross reveal">
+                    <span>╳</span>
+                </div>
+                <div class="partner-box">
+                    <img src="V logo.svg" alt="V Logo" class="partner-logo">
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 CALISKAN. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
