@@ -174,13 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const tiltX = ((mouseY - cy) / cy) * -8; // Max 8 deg
             const tiltY = ((mouseX - cx) / cx) * 8;  // Max 8 deg
 
-            heroContent.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(0)`;
+            heroContent.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 
             // Deep Parallax for internal elements
             const logo = document.getElementById('brandLogo');
             if (logo) {
                 const ox = (mouseX - cx) / cx;
                 const oy = (mouseY - cy) / cy;
+                // Preserve the Z-depth from CSS but add XY parallax
                 logo.style.transform = `translate3d(${ox * 15}px, ${oy * 15}px, 50px)`;
             }
 
@@ -194,12 +195,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         hero.addEventListener('mouseleave', () => {
-            heroContent.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
+            heroContent.style.transform = 'rotateX(0) rotateY(0)';
             heroContent.style.transition = 'transform 0.8s ease';
             const logo = document.getElementById('brandLogo');
-            if (logo) logo.style.transform = 'translate3d(0,0,0)';
+            if (logo) {
+                logo.style.transform = 'translate3d(0,0,50px)';
+                logo.style.transition = 'transform 0.8s ease';
+            }
             
-            setTimeout(() => { heroContent.style.transition = ''; }, 800);
+            setTimeout(() => { 
+                heroContent.style.transition = ''; 
+                if(logo) logo.style.transition = '';
+            }, 800);
         });
     }
 
@@ -220,17 +227,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 6. HERO PARALLAX on scroll
     // ==========================================
-    window.addEventListener('scroll', () => {
-        if (heroContent) {
-            const scrollY = window.scrollY;
-            const opacity = Math.max(0, 1 - scrollY / 600);
-            const translateY = scrollY * 0.35;
-            
-            // Apply opacity and keep current 3D transform base
-            heroContent.style.opacity = opacity;
-            // Note: We avoid overriding the transform fully here to keep tilt working, 
-            // but for scroll we can add a container shift or just manage opacity.
-        }
-    });
+    // ==========================================
+    // 7. MODAL LOGIC
+    // ==========================================
+    const ctaBtn       = document.getElementById('ctaBtn');
+    const featureModal = document.getElementById('featureModal');
+    const modalClose   = document.getElementById('modalClose');
+
+    if (ctaBtn && featureModal) {
+        ctaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            featureModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+
+        const closeModal = () => {
+            featureModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        modalClose.addEventListener('click', closeModal);
+        
+        featureModal.addEventListener('click', (e) => {
+            if (e.target === featureModal) closeModal();
+        });
+
+        // Close on ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && featureModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 
 });

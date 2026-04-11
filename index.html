@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valence Dergisi | Hoş Geldiniz</title>
     <meta name="description" content="Valence Dergisi - Kültür, sanat ve estetiğin premium noktası.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@200;300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="loading">
 
     <!-- ========== MINIMAL LOADER ========== -->
     <div class="loader" id="loader">
         <div class="loader-logo-ring">
             <svg viewBox="0 0 100 100" class="ring-svg">
-                <circle cx="50" cy="50" r="45" class="ring-track"/>
-                <circle cx="50" cy="50" r="45" class="ring-fill"/>
+                <circle cx="50" cy="50" r="45" class="ring-track" />
+                <circle cx="50" cy="50" r="45" class="ring-fill" />
             </svg>
             <img src="Valence%20Logo.svg" alt="" class="loader-logo-img">
         </div>
@@ -49,26 +53,22 @@
         <div class="corner-decor corner-br"></div>
 
         <div class="hero-content">
-            <!-- Decorative top line -->
-            <div class="deco-line reveal"></div>
-
             <div class="logo-wrapper reveal delay-1">
                 <img src="Valence%20Logo.svg" alt="Valence Dergisi Logo" class="brand-logo" id="brandLogo">
                 <div class="logo-glow"></div>
             </div>
-            
+
             <div class="title-group">
                 <h1 class="reveal delay-2">VALENCE</h1>
                 <div class="magazine-label reveal delay-3">
-                    <span class="label-line"></span>
-                    <span class="label-text">MAGAZINE</span>
-                    <span class="label-line"></span>
+                    <div class="label-line-container">
+                        <span class="label-line"></span>
+                        <span class="label-text">MAGAZINE</span>
+                        <span class="label-line"></span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Decorative bottom line -->
-            <div class="deco-line reveal delay-4"></div>
-            
             <div class="cta-wrapper reveal delay-5">
                 <a href="#" class="btn btn-primary" id="ctaBtn">
                     <span class="btn-text">Dergiyi Keşfet</span>
@@ -76,7 +76,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="scroll-indicator reveal delay-7" id="scrollIndicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -105,12 +105,87 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>© 2026 CALISKAN. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
+    <!-- ========== COMING SOON POPUP ========== -->
+    <div class="modal-overlay" id="featureModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+
+            <div class="modal-header">
+                <span class="status-badge">PREVIEW</span>
+                <h2 class="modal-title">COMING SOON</h2>
+                <div class="modal-divider"></div>
+            </div>
+
+            <div class="modal-body">
+                <h3 class="feature-title">OUR FEATURES</h3>
+                <div class="features-placeholder">
+                    <div class="author-card detailed-card">
+                        <div class="card-header">
+                            <div class="author-avatar-wrapper">
+                                <img src="yazar.jpeg" alt="Author" class="author-avatar">
+                                <div class="avatar-ring"></div>
+                            </div>
+                            <div class="author-main-info">
+                                <div class="author-name-row">
+                                    <h4 class="author-name">ELA</h4>
+                                    <span class="verify-badge">✓</span>
+                                </div>
+                                <p class="author-role-tag">CHEMISTRY SPECIALIST</p>
+                            </div>
+                        </div>
+
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">TEAM</span>
+                                <div class="stat-value team-badge">
+                                    <img src="V logo.svg" alt="Valence" class="tiny-logo">
+                                    VALENCE
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">EDUCATION</span>
+                                <span class="stat-value">GTU | CHEMISTRY (1ST YR)</span>
+                            </div>
+                        </div>
+
+                        <div class="author-about">
+                            <p class="about-text">Exploring the molecular beauty of chemistry at Gebze Technical
+                                University. Dedicated to bridging academic rigor with high-end editorial storytelling.
+                            </p>
+                        </div>
+
+                        <div class="recent-works">
+                            <span class="section-label">RECENT WORKS</span>
+                            <div class="works-grid">
+                                <div class="work-tag">MOL-ART 2024</div>
+                                <div class="work-tag">LAB INSIGHTS</div>
+                                <div class="work-tag">+3 MORE</div>
+                            </div>
+                        </div>
+
+                        <button class="view-profile-btn full-btn">VIEW FULL PORTFOLIO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p>IN COLLABORATION WITH</p>
+                <div class="modal-partner-logos">
+                    <img src="CALISKAN logo.svg" alt="CALISKAN" class="modal-logo">
+                    <span class="modal-cross">✕</span>
+                    <img src="V logo.svg" alt="V" class="modal-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
+
 </html>
